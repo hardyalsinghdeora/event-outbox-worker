@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+data
+.git
+.github
+docs
+tests
+*.db
+*.db-wal
+*.db-shm
+.env
