@@ -4,6 +4,7 @@ import { z } from 'zod';
 import type { Clock } from '../clock.js';
 import type { Database } from '../db/database.js';
 import { orderLineSchema } from '../events.js';
+import { readHealth } from '../health.js';
 import type { Logger } from '../logger.js';
 import { findOrder, placeOrder } from './repository.js';
 
@@ -37,6 +38,8 @@ export function createApi({ db, logger, clock }: ApiDeps): Hono {
     const order = findOrder(db, c.req.param('id'));
     return order ? c.json(order) : problem(c, 404, 'Order not found');
   });
+
+  app.get('/healthz', (c) => c.json(readHealth(db, clock)));
 
   app.notFound((c) => problem(c, 404, 'Not found'));
   app.onError((error, c) => {

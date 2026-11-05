@@ -21,6 +21,14 @@ export function parseEnvelope(json: string): EventEnvelope {
   return envelopeSchema.parse(JSON.parse(json));
 }
 
+export function tryParseEnvelope(json: string): EventEnvelope | undefined {
+  try {
+    return parseEnvelope(json);
+  } catch {
+    return undefined;
+  }
+}
+
 export const ORDER_PLACED = 'OrderPlaced';
 
 export const orderLineSchema = z.object({
