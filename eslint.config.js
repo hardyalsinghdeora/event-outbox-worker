@@ -15,6 +15,8 @@ export default defineConfig(
       },
     },
     rules: {
+      // `db.get<Row>(sql)` lets the caller name the row shape on purpose; the cast lives in one adapter.
+      '@typescript-eslint/no-unnecessary-type-parameters': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'error',
       '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
       '@typescript-eslint/no-floating-promises': 'error',
