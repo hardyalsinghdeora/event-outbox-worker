@@ -24,6 +24,10 @@ export default defineConfig(
     },
   },
   {
+    files: ['src/demo.ts'],
+    rules: { 'no-console': 'off' },
+  },
+  {
     files: ['**/*.js'],
     extends: [tseslint.configs.disableTypeChecked],
   },
