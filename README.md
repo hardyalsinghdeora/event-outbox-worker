@@ -202,5 +202,5 @@ docs/adr/        the three decisions above, with consequences
 
 ## About
 
-Built by [Hardyal Singh Deora](https://hardyalsinghdeora.pages.dev) ([GitHub](https://github.com/hardyalsinghdeora))
+Built by [Hardyal Singh Deora](https://hardyal.is-a.dev) ([GitHub](https://github.com/hardyalsinghdeora))
 as a portfolio sample. It is a reference implementation, not production code. MIT licensed.
